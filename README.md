@@ -1,4 +1,4 @@
-# cat_reloded
+# email_classifier
 
 A new Flutter project.
 
