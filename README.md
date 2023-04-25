@@ -2,15 +2,23 @@
 
 A new Flutter project.
 
-## Getting Started
+# email_classifier
 
-This project is a starting point for a Flutter application.
+Problem formulation:
+_____________________
 
-A few resources to get you started if this is your first Flutter project:
+-Initial state:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Probabilities that we will use to decide if email is spam or ham are equal (50%:50%).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-Successor function:
+
+Testing each word whether it relates to a spam e-mail or not
+
+-Goal test:
+
+decide if the email is spam or ham based on the resulted probabilities.
+
+-Path cost:
+
+a loss function such as binary cross-entropy, which computes the cost associated with the predicted probability of each category (spam or ham) compared to the true class label (that it trained on), in the case of binary cross-entropy, the path cost for a given email would be the negative log-likelihood of the predicted probability for the true class label. For example, if the model predicts that an email has a 0.8 probability of being spam and the true label is spam, the path cost for that prediction would be -log(0.8) = 0.2231. If the model predicts a 0.2 probability of spam and the true label is not spam, the path cost for that prediction would be -log(0.8) = 1.6094.
